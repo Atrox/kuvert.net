@@ -533,7 +533,9 @@
                                                 <tr>
                                                     <td>
                                                         <p class="f-fallback sub">@Model.Product.TroubleText.Replace("{ACTION}", action.Button.Text)</p>
-                                                        <p class="f-fallback sub">@action.Button.Link</p>
+                                                        <p class="f-fallback sub">
+                                                            <a href="@action.Button.Link">@action.Button.Link</a>
+                                                        </p>
                                                     </td>
                                                 </tr>
                                             }
