@@ -1,0 +1,36 @@
+﻿@using RazorLight
+@inherits TemplatePage<Kuvert.Models.TemplateModel>
+@{
+    var title = Model.Email.Header.Custom ?? $"{Model.Email.Header.Greeting} {Model.Email.Header.Name}";
+}
+** @Model.Product.Name (@Model.Product.Link)
+**
+** @title
+------------------------------------------------------------
+
+@foreach (var intro in Model.Email.Intros)
+{
+    @Raw($"{intro}\n")
+}
+
+@foreach (var (key, value) in Model.Email.Dictionary)
+{
+    @Raw($"- {key}: {value}\n")
+}
+
+@foreach (var action in Model.Email.Actions)
+{
+    @Raw(action.Instructions)
+    @Raw($"{action.Button.Text} ({action.Button.Link})\n")
+}
+
+@foreach (var outro in Model.Email.Outros)
+{
+    @Raw($"{outro}\n")
+}
+
+
+@Model.Product.Signature,
+@Model.Product.Name
+
+@Model.Product.Copyright
