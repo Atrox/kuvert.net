@@ -12,6 +12,10 @@ namespace Kuvert
             var options = new KuvertServiceOptions();
             configureService?.Invoke(options);
 
+            // ensure product is set
+            if (options.Product == null)
+                throw new ArgumentException("product needs to be set", nameof(options.Product));
+
             // razor renderer
             services.AddSingleton<IKuvertRenderer, RazorRenderer>();
 
@@ -28,7 +32,7 @@ namespace Kuvert
 
     public class KuvertServiceOptions
     {
-        public Product Product { get; set; } = new Product();
+        public Product? Product { get; set; }
     }
 
     public class KuvertServicesBuilder
