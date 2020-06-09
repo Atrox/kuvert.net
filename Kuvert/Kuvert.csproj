@@ -6,7 +6,7 @@
         <PreserveCompilationContext>true</PreserveCompilationContext>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>AtroxDev</Authors>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <PackageId>Kuvert</PackageId>
         <Description>Kuvert is a library that generates clean, responsive HTML &amp; plain-text for sending transactional emails.</Description>
         <Copyright>Copyright 2020 Atrox &lt;hello@atrox.dev&gt;</Copyright>
