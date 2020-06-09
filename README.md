@@ -1,11 +1,19 @@
 ﻿# Kuvert
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fkuvert.net%2Fbadge&style=flat-square)](https://actions-badge.atrox.dev/atrox/kuvert.net/goto)
+[![Latest Version](https://img.shields.io/nuget/v/Kuvert?style=flat-square)](https://www.nuget.org/packages/Kuvert/)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Atrox/kuvert.net.svg?style=flat-square)](https://codecov.io/gh/Atrox/kuvert.net)
+
 Kuvert is a library that generates clean, responsive HTML & plain-text for sending transactional emails.
 
 ## Samples
 TODO: images
 
 ## Installation
+
+```
+dotnet add package Kuvert
+```
 
 ### Dependency Injection
 
