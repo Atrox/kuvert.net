@@ -15,41 +15,41 @@ namespace Kuvert.Tests
             var kuvert = new KuvertService(new RazorRenderer(), new KuvertDefaultTemplate(),
                 new Product("Test Product", "https://example.com/product"));
 
-            var (html, text) = await kuvert.Generate(new Email()
+            var (html, text) = await kuvert.Generate(new Email
             {
                 PreHeader = "Pre header text...",
-                Header = new Header()
+                Header = new Header
                 {
                     Greeting = "Yo",
-                    Name = "Test User",
+                    Name = "Test User"
                 },
-                Intros = new List<string>()
+                Intros = new List<string>
                 {
                     "Test Intro 1",
                     "Test Intro 2"
                 },
-                Dictionary = new List<(string, string)>()
+                Dictionary = new List<(string, string)>
                 {
                     ("key", "value"),
-                    ("key2", "value2"),
+                    ("key2", "value2")
                 },
-                Actions = new List<EmailAction>()
+                Actions = new List<EmailAction>
                 {
-                    new EmailAction()
+                    new EmailAction
                     {
                         Instructions = "Test Instruction",
-                        Button = new EmailButton()
+                        Button = new EmailButton
                         {
                             Text = "Test Button",
                             Link = "https://example.com/testbutton"
                         }
                     }
                 },
-                Outros = new List<string>()
+                Outros = new List<string>
                 {
                     "Test Outro 1",
                     "Test Outro 2"
-                },
+                }
             });
 
             // product

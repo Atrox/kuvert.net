@@ -37,11 +37,11 @@ namespace Kuvert
 
     public class KuvertServicesBuilder
     {
-        public IServiceCollection Services { get; private set; }
-
         internal KuvertServicesBuilder(IServiceCollection services)
         {
             Services = services;
         }
+
+        public IServiceCollection Services { get; }
     }
 }

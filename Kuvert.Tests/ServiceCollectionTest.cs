@@ -17,13 +17,11 @@ namespace Kuvert.Tests
             Assert.Throws<ArgumentException>(() => { services.AddKuvert(options => { }); });
 
             // add kuvert
-            services.AddKuvert(options =>
-            {
-                options.Product = new Product("test product", "testlink");
-            }).AddDefaultTemplate();
-            
+            services.AddKuvert(options => { options.Product = new Product("test product", "testlink"); })
+                .AddDefaultTemplate();
+
             var provider = services.BuildServiceProvider();
-            
+
             // kuvert service
             var kuvertService = provider.GetRequiredService<IKuvert>();
             Assert.IsType<KuvertService>(kuvertService);
@@ -31,7 +29,7 @@ namespace Kuvert.Tests
             // template service
             var templateService = provider.GetRequiredService<IKuvertTemplate>();
             Assert.IsType<KuvertDefaultTemplate>(templateService);
-            
+
             // renderer service
             var rendererService = provider.GetRequiredService<IKuvertRenderer>();
             Assert.IsType<RazorRenderer>(rendererService);

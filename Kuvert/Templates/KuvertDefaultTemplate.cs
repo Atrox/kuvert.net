@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,16 +10,8 @@ namespace Kuvert.Templates
         private const string BasePath = "Kuvert.Templates.Default";
 
         public string Key() => "default";
-
-        public Task<string> Html()
-        {
-            return GetTemplate("Html.cshtml");
-        }
-
-        public Task<string> PlainText()
-        {
-            return GetTemplate("PlainText.cshtml");
-        }
+        public Task<string> Html() => GetTemplate("Html.cshtml");
+        public Task<string> PlainText() => GetTemplate("PlainText.cshtml");
 
         private static Task<string> GetTemplate(string template)
         {

@@ -1,5 +1,4 @@
-﻿@using RazorLight
-@inherits TemplatePage<Kuvert.Models.TemplateModel>
+﻿@inherits RazorLight.TemplatePage<Kuvert.Models.TemplateModel>
 @{
     var title = Model.Email.Header.Custom ?? $"{Model.Email.Header.Greeting} {Model.Email.Header.Name}";
 }

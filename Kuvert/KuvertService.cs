@@ -5,9 +5,9 @@ namespace Kuvert
 {
     public class KuvertService : IKuvert
     {
+        private readonly Product _product;
         private readonly IKuvertRenderer _renderer;
         private readonly IKuvertTemplate _template;
-        private readonly Product _product;
 
         public KuvertService(IKuvertRenderer renderer, IKuvertTemplate template, Product product)
         {
