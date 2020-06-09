@@ -28,7 +28,7 @@ namespace Kuvert
 
     public class KuvertServiceOptions
     {
-        public Product Product { get; set; }
+        public Product Product { get; set; } = new Product();
     }
 
     public class KuvertServicesBuilder
