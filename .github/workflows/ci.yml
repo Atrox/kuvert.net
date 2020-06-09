@@ -28,6 +28,9 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal --collect:"XPlat Code Coverage"
 
+    - name: send coverage to codecov
+      run: bash <(curl -s https://codecov.io/bash)
+
     # Publish
     - name: publish on version change
       uses: rohith/publish-nuget@v2
