@@ -22,8 +22,8 @@ namespace Kuvert
             // kuvert service
             services.AddSingleton<IKuvert>(provider =>
                 new KuvertService(
-                    provider.GetService<IKuvertRenderer>(),
-                    provider.GetService<IKuvertTemplate>(),
+                    provider.GetRequiredService<IKuvertRenderer>(),
+                    provider.GetRequiredService<IKuvertTemplate>(),
                     options.Product));
 
             return new KuvertServicesBuilder(services);
