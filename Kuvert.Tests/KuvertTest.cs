@@ -49,6 +49,11 @@ namespace Kuvert.Tests
                 {
                     "Test Outro 1",
                     "Test Outro 2"
+                },
+                CustomHtml = new CustomHtml()
+                {
+                    AfterIntros = "<span>custom after intros</span>",
+                    BeforeOutros = "<span>custom before outros</span>"
                 }
             });
 
@@ -85,6 +90,10 @@ namespace Kuvert.Tests
             // outros
             Assert.Contains("Test Outro 1", html);
             Assert.Contains("Test Outro 2", html);
+            
+            // custom html
+            Assert.Contains("<span>custom after intros</span>", html);
+            Assert.Contains("<span>custom before outros</span>", html);
         }
     }
 }

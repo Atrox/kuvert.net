@@ -471,6 +471,11 @@
                                             <p>@intro</p>
                                         }
 
+                                        @if (Model.Email.CustomHtml?.AfterIntros != null)
+                                        {
+                                            @Raw(Model.Email.CustomHtml.AfterIntros)
+                                        }
+
                                         @if (Model.Email.Dictionary.Count > 0)
                                         {
                                             <table class="attributes" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -517,6 +522,11 @@
                                                     </td>
                                                 </tr>
                                             </table>
+                                        }
+
+                                        @if (Model.Email.CustomHtml?.BeforeOutros != null)
+                                        {
+                                            @Raw(Model.Email.CustomHtml.BeforeOutros)
                                         }
 
                                         @foreach (var outro in Model.Email.Outros)

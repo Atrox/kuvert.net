@@ -34,6 +34,11 @@ namespace Kuvert.Models
         ///     Outro sentences, last displayed in the email
         /// </summary>
         public IList<string> Outros { get; set; } = new List<string>();
+
+        /// <summary>
+        ///     Option to use custom html to render images or other stuff not natively supported.
+        /// </summary>
+        public CustomHtml? CustomHtml { get; set; }
     }
 
     public class Header
@@ -54,5 +59,11 @@ namespace Kuvert.Models
     {
         public string Text { get; set; }
         public string Link { get; set; }
+    }
+
+    public class CustomHtml
+    {
+        public string? AfterIntros { get; set; }
+        public string? BeforeOutros { get; set; }
     }
 }
