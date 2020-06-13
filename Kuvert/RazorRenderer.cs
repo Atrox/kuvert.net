@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using RazorLight;
-using RazorLight.Razor;
 
 namespace Kuvert
 {
@@ -12,7 +10,7 @@ namespace Kuvert
         public RazorRenderer()
         {
             _engine = new RazorLightEngineBuilder()
-                .UseProject(new InMemoryRazorLightProject())
+                .UseEmbeddedResourcesProject(typeof(IKuvert))
                 .UseMemoryCachingProvider()
                 .Build();
         }
@@ -20,19 +18,6 @@ namespace Kuvert
         public async Task<string> ParseAsync<T>(string key, string template, T model)
         {
             return await _engine.CompileRenderStringAsync(key, template, model);
-        }
-    }
-
-    public class InMemoryRazorLightProject : RazorLightProject
-    {
-        public override Task<RazorLightProjectItem> GetItemAsync(string templateKey)
-        {
-            return Task.FromResult<RazorLightProjectItem>(new TextSourceRazorProjectItem(templateKey, templateKey));
-        }
-
-        public override Task<IEnumerable<RazorLightProjectItem>> GetImportsAsync(string templateKey)
-        {
-            return Task.FromResult<IEnumerable<RazorLightProjectItem>>(new List<RazorLightProjectItem>());
         }
     }
 }
